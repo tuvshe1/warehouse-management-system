@@ -75,3 +75,13 @@ As a manager, I want to edit a warehouse document, so that incorrect information
 1. Засах боломжтой баримтын мэдээлэл зөв өөрчлөгдөнө.
 2. Буруу мэдээлэл оруулсан бол өөрчлөлт хадгалагдахгүй.
 3. Баримт засах үед үлдэгдэл буруу өөрчлөгдөхгүй.
+
+### Барааны бүртгэл хайх
+
+As an admin, I want to search products, so that I can quickly find the required product information.
+
+#### Acceptance Criteria
+
+1. Зөв SKU оруулсан үед тухайн барааны мэдээлэл харагдана.
+2. Бүртгэлгүй SKU оруулсан үед бараа олдсонгүй гэсэн мэдээлэл гарна.
+3. Хоосон хайлт хийсэн үед бүх барааг харуулахгүй, хайлтын нөхцөл шаардлагатай гэж мэдээлнэ.
