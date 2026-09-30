@@ -65,3 +65,13 @@ As a cashier, I want to check a warehouse document, so that incorrect informatio
 1. Шаардлагатай мэдээлэл бүрэн байвал баримт зөвшөөрөгдөнө.
 2. Шаардлагатай мэдээлэл дутуу байвал баримт бүртгэгдэхгүй.
 3. Буруу тоо оруулсан бол баримт бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
+
+### Баримт засах
+
+As a manager, I want to edit a warehouse document, so that incorrect information can be corrected.
+
+#### Acceptance Criteria
+
+1. Засах боломжтой баримтын мэдээлэл зөв өөрчлөгдөнө.
+2. Буруу мэдээлэл оруулсан бол өөрчлөлт хадгалагдахгүй.
+3. Баримт засах үед үлдэгдэл буруу өөрчлөгдөхгүй.
