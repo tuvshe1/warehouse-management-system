@@ -1,105 +1,98 @@
-# L04 User Story ба Acceptance Criteria
+# L04 Шаардлага
 
-## User Story
+## US-01 Бараа бүртгэх
 
-### US-01 Бараа бүртгэх
+As a manager, I want to register a new product, so that the product can be used in the warehouse.
 
-As a manager, I want to register a new product, so that the product can be used in the warehouse system.
+### Acceptance Criteria
 
-### Бараа бүртгэх
+- AC-01-01: Шинэ SKU болон шаардлагатай мэдээлэлтэй бол бараа бүртгэгдэнэ.
+- AC-01-02: Давхар SKU оруулбал шинэ бараа бүртгэгдэхгүй.
+- AC-01-03: Шаардлагатай мэдээлэл дутуу бол бараа бүртгэгдэхгүй.
 
-As a manager, I want to register a new product, so that the product can be used in the warehouse system.
+## US-02 Бараа орлогод бүртгэх
 
-#### Acceptance Criteria
+As a cashier, I want to record incoming products, so that the stock balance increases correctly.
 
-1. Шинэ SKU болон шаардлагатай мэдээлэл оруулсан үед бараа бүртгэгдэнэ.
-2. Ижил SKU өмнө нь бүртгэгдсэн бол давхар бараа бүртгэгдэхгүй.
-3. Шаардлагатай мэдээлэл дутуу бол бараа бүртгэгдэхгүй.
-### Бараа орлогод бүртгэх
+### Acceptance Criteria
 
-As a cashier, I want to record received products, so that the warehouse balance increases correctly.
+- AC-02-01: Тоо хэмжээ 0-ээс их бол үлдэгдэл нэмэгдэнэ.
+- AC-02-02: Тоо хэмжээ 0 бол бүртгэл хийгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
+- AC-02-03: Сөрөг тоо оруулбал бүртгэл хийгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
 
-#### Acceptance Criteria
+## US-03 Бараа зарлагад бүртгэх
 
-1. Эерэг тоо оруулсан үед барааны үлдэгдэл нэмэгдэнэ.
-2. 0 тоо оруулсан үед үлдэгдэл өөрчлөгдөхгүй.
-3. Сөрөг тоо оруулсан үед бүртгэл хийгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
+As a cashier, I want to record outgoing products, so that the stock balance decreases correctly.
 
-### Бараа зарлагад бүртгэх
+### Acceptance Criteria
 
-As a cashier, I want to record outgoing products, so that the warehouse balance is updated correctly.
+- AC-03-01: Үлдэгдэл хүрэлцээтэй бол зарлага бүртгэгдэж, үлдэгдэл буурна.
+- AC-03-02: Үлдэгдэл хүрэлцэхгүй бол зарлага бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
+- AC-03-03: Тоо хэмжээ 0 эсвэл сөрөг бол зарлага бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
 
-#### Acceptance Criteria
-
-1. Үлдэгдэл хүрэлцэж байвал зарлага бүртгэгдэж, үлдэгдэл хасагдана.
-2. Үлдэгдэл хүрэлцэхгүй байвал зарлага бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
-3. 0 эсвэл сөрөг тоо оруулсан бол зарлага бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
-
-   
-### Үлдэгдэл шалгах
+## US-04 Үлдэгдэл шалгах
 
 As a manager, I want to check product balance, so that I can know the current stock.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 
-1. Бараа бүртгэлтэй бол одоогийн үлдэгдэл зөв харагдана.
-2. Барааны үлдэгдэл 0 байвал 0 гэж харагдана.
-3. Бараа бүртгэлгүй бол үлдэгдэл гаргахгүй, алдааны мэдээлэл харуулна.
+- AC-04-01: Бүртгэлтэй SKU оруулахад тухайн барааны үлдэгдэл харагдана.
+- AC-04-02: Үлдэгдэл 0 бол 0 гэж харагдана.
+- AC-04-03: Бүртгэлгүй SKU оруулахад бараа олдсонгүй гэсэн мэдээлэл гарна.
 
-### Бага үлдэгдэл илрүүлэх
+## US-05 Бага үлдэгдэл илрүүлэх
 
-As a manager, I want to see low-stock products, so that I can know which products need restocking.
+As a manager, I want to see products below the stock threshold, so that I can identify products that need restocking.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 
-1. Үлдэгдэл босго хэмжээнээс бага байвал бага үлдэгдлийн жагсаалтад орно.
-2. Үлдэгдэл босго хэмжээнээс их буюу тэнцүү байвал бага үлдэгдлийн жагсаалтад орохгүй.
-3. Барааны үлдэгдэл 0 байвал бага үлдэгдлийн жагсаалтад орно.
+- AC-05-01: Үлдэгдэл 5-аас бага бараа бага үлдэгдлийн жагсаалтад орно.
+- AC-05-02: Үлдэгдэл 5 эсвэл түүнээс их бол бага үлдэгдлийн жагсаалтад орохгүй.
+- AC-05-03: Үлдэгдэл 0 бол бага үлдэгдлийн жагсаалтад орно.
 
-### Баримт шалгах
+## US-06 Баримт шалгах
 
-As a cashier, I want to check a warehouse document, so that incorrect information is not recorded.
+As a cashier, I want to check document information, so that incorrect records are not saved.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 
-1. Шаардлагатай мэдээлэл бүрэн байвал баримт зөвшөөрөгдөнө.
-2. Шаардлагатай мэдээлэл дутуу байвал баримт бүртгэгдэхгүй.
-3. Буруу тоо оруулсан бол баримт бүртгэгдэхгүй, үлдэгдэл өөрчлөгдөхгүй.
+- AC-06-01: Шаардлагатай мэдээлэл бүрэн бол баримтыг хүлээн авна.
+- AC-06-02: Шаардлагатай мэдээлэл дутуу бол баримтыг хадгалахгүй.
+- AC-06-03: Тоо хэмжээ 0 эсвэл сөрөг бол баримтыг хадгалахгүй.
 
-### Баримт засах
+## US-07 Баримт засах
 
 As a manager, I want to edit a warehouse document, so that incorrect information can be corrected.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 
-1. Засах боломжтой баримтын мэдээлэл зөв өөрчлөгдөнө.
-2. Буруу мэдээлэл оруулсан бол өөрчлөлт хадгалагдахгүй.
-3. Баримт засах үед үлдэгдэл буруу өөрчлөгдөхгүй.
+- AC-07-01: Засах боломжтой баримтын мэдээллийг өөрчилж хадгалж болно.
+- AC-07-02: Буруу мэдээлэл оруулбал өөрчлөлт хадгалагдахгүй.
+- AC-07-03: Хүчингүй өөрчлөлт хийсэн үед өмнөх зөв мэдээлэл болон үлдэгдэл өөрчлөгдөхгүй.
 
-### Барааны бүртгэл хайх
+## US-08 Барааны бүртгэл хайх
 
-As an admin, I want to search products, so that I can quickly find the required product information.
+As an admin, I want to search product records, so that I can find product information quickly.
 
-#### Acceptance Criteria
+### Acceptance Criteria
 
-1. Зөв SKU оруулсан үед тухайн барааны мэдээлэл харагдана.
-2. Бүртгэлгүй SKU оруулсан үед бараа олдсонгүй гэсэн мэдээлэл гарна.
-3. Хоосон хайлт хийсэн үед бүх барааг харуулахгүй, хайлтын нөхцөл шаардлагатай гэж мэдээлнэ.
+- AC-08-01: Бүртгэлтэй SKU хайвал тухайн барааны мэдээлэл гарна.
+- AC-08-02: Бүртгэлгүй SKU хайвал бараа олдсонгүй гэсэн мэдээлэл гарна.
+- AC-08-03: Хоосон хайлт хийвэл хайх нөхцөл оруулахыг сануулна.
 
-### Барааны бүртгэл хайх
+## Бизнесийн дүрэм
 
-As an admin, I want to search products, so that I can quickly find the required product information.
+1. SKU давхар бүртгэгдэхгүй.
+2. Тоо хэмжээ 0 бол орлого болон зарлага бүртгэгдэхгүй.
+3. Сөрөг тоо хэмжээ бүртгэгдэхгүй.
+4. Үлдэгдэл хүрэлцэхгүй бол зарлага бүртгэгдэхгүй.
+5. Бүртгэл амжилтгүй болсон үед өмнөх үлдэгдэл өөрчлөгдөхгүй.
+6. Бага үлдэгдлийн босго 5 байна.
 
-#### Acceptance Criteria
+## Миний дүгнэлт
 
-1. Зөв SKU оруулсан үед тухайн барааны мэдээлэл харагдана.
-2. Бүртгэлгүй SKU оруулсан үед бараа олдсонгүй гэсэн мэдээлэл гарна.
-3. Хоосон хайлт хийсэн үед бүх барааг харуулахгүй, хайлтын нөхцөл шаардлагатай гэж мэдээлнэ.
+Энэ хичээлээр User Story болон Acceptance Criteria бичиж сурсан.
 
-## L04 шалгалт
-
-8 User Story болон тус бүр 3 Acceptance Criteria бичсэн.
-
-0, сөрөг тоо, давхар SKU болон үлдэгдэл хүрэлцэхгүй нөхцөлийг тусгасан.
+Мөн 0, сөрөг тоо, давхар SKU болон үлдэгдэл хүрэлцэхгүй нөхцөлийг тодорхойлсон.
 
 Шаардлагуудыг дараагийн шатанд системийн үйл ажиллагаатай холбоно.
