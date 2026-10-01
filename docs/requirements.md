@@ -10,7 +10,7 @@ As a manager, I want to register a new product, so that the product can be used 
 - AC-01-02: Давхар SKU оруулбал шинэ бараа бүртгэгдэхгүй.
 - AC-01-03: Шаардлагатай мэдээлэл дутуу бол бараа бүртгэгдэхгүй.
 
-## US-02 Бараа орлогод бүртгэх.
+## US-02 Бараа орлогод бүртгэх
 
 As a cashier, I want to record incoming products, so that the stock balance increases correctly.
 
