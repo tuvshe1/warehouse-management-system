@@ -1,3 +1,26 @@
+# Node.js
 node_modules/
-.env
+npm-debug.log*
+
+# Python
 __pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Environment secrets
+.env
+.env.*
+!.env.example
+
+# Editors and operating systems
+.vscode/
+.idea/
+.DS_Store
+Thumbs.db
+
+# Test and build output
+.coverage
+.pytest_cache/
+dist/
+build/
