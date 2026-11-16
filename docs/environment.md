@@ -76,3 +76,19 @@ MySQL-ийн хувилбар командаар гарахгүй бол MySQL W
 git --version
 node --version
 python --version
+
+Бодит гаралт:
+
+A02 Үзэг - 3 ширхэг
+A04 Хавтас - 2 ширхэг
+
+Python дээр ч мөн адил:
+
+```markdown
+### Python
+
+Команд:
+
+```powershell
+python .\docs\examples\filter_low_stock.py
+
