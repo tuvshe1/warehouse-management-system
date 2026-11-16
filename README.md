@@ -1,4 +1,4 @@
-# Warehouse Management System
+﻿# Warehouse Management System
 
 ## Төслийн зорилго
 
@@ -34,21 +34,21 @@
 | [docs/debug-log.md](docs/debug-log.md) | L06 алдаа оношилгоо |
 | [docs/traceability.md](docs/traceability.md) | L07 Story–AC уялдаа |
 | [docs/reviews/G1.md](docs/reviews/G1.md) | G1 нотолгооны индекс |
+| [docs/database-design.md](docs/database-design.md) | L08 өгөгдлийн сангийн загвар ба MySQL туршилт |
 
 ## L01 жишээ ажиллуулах
 
-JavaScript:
-```bash
-node docs/examples/filter-low-stock.js
-```
+JavaScript: `node docs/examples/filter-low-stock.js`
 
-Python:
-```bash
-python docs/examples/filter_low_stock.py
-```
+Python: `python docs/examples/filter_low_stock.py`
 
-SQL:
-`docs/examples/product-stock-join.sql` файлыг MySQL орчинд ажиллуулж болно.
+SQL JOIN сургалтын жишээ: `docs/examples/product-stock-join.sql`
+
+## L08 өгөгдлийн сан
+
+Үндсэн SQL загвар: `docs/examples/warehouse-schema.sql`
+
+MySQL туршилтын үр дүн: [docs/database-design.md](docs/database-design.md)
 
 ## Ажлын төлөв
 
