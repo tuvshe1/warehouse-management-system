@@ -49,3 +49,49 @@ PR #8-ийн 0 changed files гэдэг нь ажиглагдсан баримт
 ## 8. Миний дүгнэлт
 
 PR нээх нь дангаараа файл өөрчлөгдсөнийг батлахгүй. Base/head branch болон бодит diff-ийг шалгах хэрэгтэй. 0 changed files байвал merge хийхээс өмнө шалтгааныг олж, бодит өөрчлөлттэй PR гаргах нь зөв.
+
+## 9. Бодит Merge Conflict туршилт
+
+### 9.1 Туршилтын зорилго
+
+Git-ийн хоёр branch дээр нэг файлд ижил мөрийг өөр өөрөөр өөрчлөхөд merge conflict үүсэх эсэхийг шалгав.
+
+### 9.2 Туршилтын явц
+
+1. `main` branch дээр `conflict-demo.txt` файл үүсгэж commit хийсэн.
+2. `test/conflict-a` branch дээр файлын мөрийг `Change from branch A` болгож өөрчилсөн.
+3. `test/conflict-b` branch дээр ижил мөрийг `Change from branch B` болгож өөрчилсөн.
+4. `test/conflict-a` дээр `git merge test/conflict-b` командыг ажиллуулсан.
+
+### 9.3 Илэрсэн алдаа
+
+Git дараах алдааг харуулсан:
+
+`CONFLICT (content): Merge conflict in conflict-demo.txt`
+
+Автоматаар нэгтгэх боломжгүй болсон.
+
+### 9.4 Алдааг шийдвэрлэсэн нь
+
+Файлыг гараар засаж дараах мөрийг үлдээсэн:
+
+`Change from branches A and B`
+
+Дараа нь дараах командуудыг ажиллуулсан:
+
+- `git add conflict-demo.txt`
+- `git commit -m "Resolve merge conflict"`
+
+### 9.5 Туршилтын үр дүн
+
+- Conflict бодитоор үүссэн.
+- Хоёр branch-ийн өөрчлөлтийг гараар нэгтгэсэн.
+- Шийдвэрлэсэн commit: `8acb5b4`
+- `git status` — working tree clean.
+- Файлын эцсийн агуулга зөв хадгалагдсан.
+
+**Төлөв: PASS**
+
+### 9.6 Дүгнэлт
+
+Хоёр branch нэг файлын ижил мөрийг өөр өөрөөр өөрчилсөн үед Git merge conflict үүсгэж байгааг туршилтаар батлав. Conflict-ийг гараар шийдвэрлэж, commit хийснээр merge ажиллагааг амжилттай дуусгав.
