@@ -122,3 +122,57 @@ erDiagram
 Хүснэгтүүдийн хооронд Primary Key болон Foreign Key холбоо ашигласан. SKU давхардахгүй, тоо хэмжээ 0 болон сөрөг болохгүй нөхцөлийг өгөгдлийн сангийн түвшинд хамгаалахаар төлөвлөсөн.
 
 Дараагийн шатанд SQL кодыг MySQL дээр ажиллуулж, хүснэгтүүд болон холбоосууд зөв үүссэн эсэхийг шалгана.
+
+
+## MySQL дээр хийсэн бодит туршилт
+
+Шалгасан огноо: 2026-11-16
+
+MySQL Server: 9.6.0
+
+### 1. Өгөгдлийн сангийн хүснэгтүүд
+
+Команд:
+```sql
+USE warehouse_db;
+SHOW TABLES;
+```
+
+Үр дүн: PASS
+
+Дараах 3 хүснэгт үүссэн:
+- products
+- warehouse_documents
+- document_items
+
+### 2. Давхардсан SKU шалгах
+
+Команд:
+```sql
+INSERT INTO products (sku, product_name, unit)
+VALUES ('A01', 'Туршилтын бараа', 'ширхэг');
+```
+
+Бодит үр дүн:
+```text
+Error Code: 1062.
+Duplicate entry 'A01' for key 'products.sku'
+```
+
+Үр дүн: PASS — давхардсан SKU бүртгэгдээгүй.
+
+### 3. 0 тоо хэмжээ шалгах
+
+Команд:
+```sql
+INSERT INTO document_items (document_id, product_id, quantity)
+VALUES (1, 1, 0);
+```
+
+Бодит үр дүн:
+```text
+Error Code: 3819.
+Check constraint 'chk_quantity_positive' is violated.
+```
+
+Үр дүн: PASS — 0 тоо хэмжээтэй мөр бүртгэгдээгүй.
