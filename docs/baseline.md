@@ -6,78 +6,52 @@
 - **Зарлага:** бараа агуулахаас гарах хөдөлгөөн.
 - **Үлдэгдэл:** тухайн агуулахад одоо байгаа барааны тоо хэмжээ.
 
-## 2. JavaScript оролдлого
+## 2. JavaScript туршилт
 
-Барааны үлдэгдэл 5-аас бага бүтээгдэхүүнийг шүүх жишээг `docs/examples/filter-low-stock.js` файлд оруулсан.
+Файл: `docs/examples/filter-low-stock.js`
 
-Ажиллуулах:
-```bash
-node docs/examples/filter-low-stock.js
-```
+Ажиллуулах: `node docs/examples/filter-low-stock.js`
 
-Хүлээгдэж буй үр дүн:
-```text
-A02 Үзэг - 3 ширхэг
-A04 Хавтас - 2 ширхэг
-```
+Бодит гаралт:
+- A02 Үзэг - 3 ширхэг
+- A04 Хавтас - 2 ширхэг
 
-## 3. Python оролдлого
+Төлөв: PASS
 
-Ижил өгөгдөл, ижил нөхцөлийг Python-оор давтан шалгах жишээ `docs/examples/filter_low_stock.py` файлд байна.
+## 3. Python туршилт
 
-Ажиллуулах:
-```bash
-python docs/examples/filter_low_stock.py
-```
+Файл: `docs/examples/filter_low_stock.py`
 
-Хүлээгдэж буй үр дүн:
-```text
-A02 Үзэг - 3 ширхэг
-A04 Хавтас - 2 ширхэг
-```
+Ажиллуулах: `python docs/examples/filter_low_stock.py`
 
-**Өмнөх туршилтын тэмдэглэл:** Эдгээр таван барааны өгөгдлийг ашиглан JavaScript болон Python дээр бага үлдэгдэлтэй A02, A04 барааг гаргаж үзсэн. Дээрх файлуудыг шинэчилсний дараа локал компьютер дээр дахин ажиллуулж, огноо болон бодит гаралтыг доорх хүснэгтэд тэмдэглэнэ.
+Бодит гаралт:
+- A02 Үзэг - 3 ширхэг
+- A04 Хавтас - 2 ширхэг
 
-| Хэл | Шалгах зүйл | Төлөв |
-|---|---|---|
-| JavaScript | Командыг ажиллуулж A02, A04 гарч байгааг шалгах | Дахин баталгаажуулах |
-| Python | Командыг ажиллуулж A02, A04 гарч байгааг шалгах | Дахин баталгаажуулах |
+Төлөв: PASS
 
-## 4. SQL JOIN оролдлого
+JavaScript болон Python дээр ижил өгөгдөл ашиглахад ижил үр дүн гарсан.
 
-JOIN нь хоёр хүснэгтэд байгаа холбоотой мэдээллийг нэг үр дүнд нэгтгэн харуулна.
+## 4. SQL JOIN сургалтын жишээ
 
-Жишээ хүснэгт:
+Энэ жишээнд `products` болон `stocks` хүснэгтийг SKU-аар холбосон.
 
-**products**
+SQL файл: `docs/examples/product-stock-join.sql`
 
-| sku | product_name |
-|---|---|
-| A01 | Цаас |
-| A02 | Үзэг |
-| A03 | Дэвтэр |
+Ажиллуулсан өгөгдлийн сан: `l01_join_demo`
 
-**stocks**
+Ашигласан query:
 
-| sku | quantity |
-|---|---:|
-| A01 | 10 |
-| A02 | 3 |
-| A03 | 7 |
+    SELECT
+        products.sku,
+        products.product_name,
+        stocks.quantity
+    FROM products
+    INNER JOIN stocks
+        ON products.sku = stocks.sku
+    ORDER BY products.sku;
 
-SQL:
-```sql
-SELECT
-    products.sku,
-    products.product_name,
-    stocks.quantity
-FROM products
-INNER JOIN stocks
-    ON products.sku = stocks.sku
-ORDER BY products.sku;
-```
-
-Хүлээгдэж буй үр дүн:
+MySQL 9.6.0 дээр бодитоор ажиллуулсан үр дүн:
 
 | sku | product_name | quantity |
 |---|---|---:|
@@ -85,7 +59,7 @@ ORDER BY products.sku;
 | A02 | Үзэг | 3 |
 | A03 | Дэвтэр | 7 |
 
-Бүрэн SQL жишээ `docs/examples/product-stock-join.sql` файлд байна. MySQL дээр ажиллуулсны дараа бодит үр дүнг тэмдэглэнэ.
+Төлөв: PASS — 3 мөр өгөгдөл зөв гарсан. UTF-8 тохиргоотой үед Монгол нэршил зөв харагдсан.
 
 ## 5. Мэдэхгүй болон сайжруулах зүйлс
 
@@ -101,79 +75,12 @@ ORDER BY products.sku;
 
 ## 7. Дүгнэлт
 
-Энэ лабораторид агуулахын орлого, зарлага, үлдэгдлийн ойлголтыг тодорхойлж, ижил өгөгдлийг JavaScript болон Python-оор шүүх жишээ бэлдэв. SQL JOIN-ийн хоёр хүснэгттэй жишээг мөн бэлдсэн. Жишээ файлуудыг локал орчинд дахин ажиллуулж баталгаажуулсны дараа бодит гаралт, огноог тэмдэглэнэ.
+Энэ лабораторид агуулахын орлого, зарлага, үлдэгдлийн ойлголтыг тодорхойлж, JavaScript болон Python-оор бага үлдэгдэлтэй барааг шүүж шалгав. Мөн MySQL 9.6.0 дээр `products` болон `stocks` хүснэгтийг INNER JOIN ашиглан холбож, 3 мөр үр дүн зөв гарсныг баталгаажуулав.
 
-## Жишээ кодын бодит туршилт
+## 8. L08 — Агуулахын өгөгдлийн сангийн туршилт
 
-Шалгасан огноо: 2026-11-16
+L08-ийн бодит өгөгдлийн сангийн бүтэц, хүснэгтүүд, SQL тестийн үр дүнг тусдаа баримтжуулсан.
 
-### JavaScript
+Дэлгэрэнгүй: `docs/database-design.md`
 
-Команд:
-
-```powershell
-node .\docs\examples\filter-low-stock.js
-```
-
-Бодит гаралт:
-
-```text
-A02 Үзэг - 3 ширхэг
-A04 Хавтас - 2 ширхэг
-```
-
-Төлөв: PASS
-
-### Python
-
-Команд:
-
-```powershell
-python .\docs\examples\filter_low_stock.py
-```
-
-Бодит гаралт:
-
-```text
-A02 Үзэг - 3 ширхэг
-A04 Хавтас - 2 ширхэг
-```
-
-Төлөв: PASS
-
-### Туршилтын дүгнэлт
-
-JavaScript болон Python дээр ижил өгөгдлийг шүүхэд ижил үр дүн гарсан. Үлдэгдэл 5-аас бага A02 болон A04 бараа зөв шүүгдсэн.
-
-SQL JOIN-ийн жишээ бэлдсэн боловч MySQL дээр бодитоор ажиллуулж баталгаажуулах ажил үлдсэн.
-
-## SQL JOIN бодит тест
-
-MySQL 9.6.0 дээр warehouse_db өгөгдлийн санд дараах 3 хүснэгтийг JOIN ашиглан холбож шалгав.
-
-- warehouse_documents
-- document_items
-- products
-
-Ашигласан query:
-
-SELECT
-    wd.document_no,
-    wd.document_type,
-    wd.status,
-    p.sku,
-    p.product_name,
-    di.quantity
-FROM warehouse_documents AS wd
-INNER JOIN document_items AS di
-    ON wd.document_id = di.document_id
-INNER JOIN products AS p
-    ON di.product_id = p.product_id;
-
-Үр дүн:
-- Query амжилттай ажилласан.
-- 5 мөр өгөгдөл буцаасан.
-- Баримт, барааны SKU болон тоо хэмжээг холбож харуулсан.
-- Монгол нэршил терминал дээр кодчиллын зөрүүнээс шалтгаалан эвдэрч харагдсан.
-
-Төлөв: PASS — JOIN query амжилттай ажилласан.
+Энэ нь L01-ийн сургалтын `products` + `stocks` JOIN жишээнээс тусдаа бөгөөд агуулахын бодит `products`, `warehouse_documents`, `document_items` хүснэгтүүдийг хамарна.
