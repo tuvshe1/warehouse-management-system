@@ -146,3 +146,34 @@ A04 Хавтас - 2 ширхэг
 JavaScript болон Python дээр ижил өгөгдлийг шүүхэд ижил үр дүн гарсан. Үлдэгдэл 5-аас бага A02 болон A04 бараа зөв шүүгдсэн.
 
 SQL JOIN-ийн жишээ бэлдсэн боловч MySQL дээр бодитоор ажиллуулж баталгаажуулах ажил үлдсэн.
+
+## SQL JOIN бодит тест
+
+MySQL 9.6.0 дээр warehouse_db өгөгдлийн санд дараах 3 хүснэгтийг JOIN ашиглан холбож шалгав.
+
+- warehouse_documents
+- document_items
+- products
+
+Ашигласан query:
+
+SELECT
+    wd.document_no,
+    wd.document_type,
+    wd.status,
+    p.sku,
+    p.product_name,
+    di.quantity
+FROM warehouse_documents AS wd
+INNER JOIN document_items AS di
+    ON wd.document_id = di.document_id
+INNER JOIN products AS p
+    ON di.product_id = p.product_id;
+
+Үр дүн:
+- Query амжилттай ажилласан.
+- 5 мөр өгөгдөл буцаасан.
+- Баримт, барааны SKU болон тоо хэмжээг холбож харуулсан.
+- Монгол нэршил терминал дээр кодчиллын зөрүүнээс шалтгаалан эвдэрч харагдсан.
+
+Төлөв: PASS — JOIN query амжилттай ажилласан.
